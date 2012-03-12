@@ -35,7 +35,7 @@ class Main():
     def refresh(self):
         self.IMAGE_PATH = Gio.Settings.new(self.WALLPAPER_KEY).get_string("picture-uri")
         stylesheet = open("/home/bigbn/dash.css",mode="w")
-        stylesheet.write("body { background: url('%s')}" % self.IMAGE_PATH);
+        stylesheet.write("body { background: url('%s') no-repeat; background-size: 100%;}" % self.IMAGE_PATH);
         stylesheet.close();
         self.webview.reload()
 
