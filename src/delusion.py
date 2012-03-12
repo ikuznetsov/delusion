@@ -4,7 +4,8 @@
 import gi
 gi.require_version('WebKit', '3.0')
 from gi.repository import Gtk,Gdk,Gio
-from gi.repository import WebKit
+#from gi.repository import WebKit
+from browser import Browser
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 
@@ -18,7 +19,7 @@ class Main():
         self.bus.add_signal_receiver(self.dbus_listener,None,None,None,None,)
 
         self.window = Gtk.Window()
-        self.webview = WebKit.WebView()
+        self.webview = Browser()
 
         self.window.add(self.webview)
 
@@ -28,7 +29,7 @@ class Main():
         self.show()
         self.main()
 
-    def dbus_listener(self,section=None,arg2=None,arg3=None,arg4=None,arg5=None):
+    def dbus_listener(self,section=None,arg2=None,arg3=None,arg4=None,arg5=None,arg6=None):
         if "/org/gnome/desktop/background/" in str(section):        
             self.refresh()
 
