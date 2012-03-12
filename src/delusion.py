@@ -29,7 +29,7 @@ class Main():
         self.main()
 
     def dbus_listener(self,section=None,arg2=None,arg3=None,arg4=None,arg5=None):
-        if "/org/gnome/desktop/background/" in section:        
+        if "/org/gnome/desktop/background/" in str(section):        
             self.refresh()
 
     def refresh(self):

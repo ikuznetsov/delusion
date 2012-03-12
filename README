@@ -6,3 +6,7 @@ It uses the WebKit for show widgets and other funny things. It uses dbus to be t
 2. Прибраться в коде с прицелом на систему плагинов.
 3. Сделать поддержку мультиязычности.
 4. Пользоваться и радоваться.
+
+#FEXME:
+1. Фильтр для dbus чтобы слушал только нужные события
+
