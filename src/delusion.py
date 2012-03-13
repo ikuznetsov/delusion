@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*- 
 
+import os
 import gi
 gi.require_version('WebKit', '3.0')
 from gi.repository import Gtk,Gdk,Gio
@@ -35,7 +36,7 @@ class Main():
 
     def refresh(self):
         self.IMAGE_PATH = Gio.Settings.new(self.WALLPAPER_KEY).get_string("picture-uri")
-        stylesheet = open("%s/res/background.css" % os.getxwd() ,mode="w")
+        stylesheet = open("%s/res/background.css" % os.getcwd() ,mode="w")
         stylesheet.write("body { background: url('%s') no-repeat; background-size: 100%%;}" % self.IMAGE_PATH);
         stylesheet.close();
         self.webview.reload()
