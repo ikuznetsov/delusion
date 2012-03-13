@@ -26,6 +26,8 @@ class Main():
 
         self.refresh()
         self.webview.load_uri('file://%s/res/desktop.html' % os.getcwd())
+
+        self.load_plugins()
         
         self.show()
         self.main()
@@ -40,6 +42,9 @@ class Main():
         stylesheet.write("body { background: url('%s') no-repeat; background-size: 100%%;}" % self.IMAGE_PATH);
         stylesheet.close();
         self.webview.reload()
+
+    def load_plugins(self):
+        pass
 
     def show(self):
         self.window.set_type_hint(Gdk.WindowTypeHint.DESKTOP)
