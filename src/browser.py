@@ -1,6 +1,7 @@
 from gi.repository import WebKit as webkit
 import urllib
 from os import system
+import base64
 
 class Browser(webkit.WebView):
     def __init__(self):
@@ -13,8 +14,18 @@ class Browser(webkit.WebView):
             pol_dec.use()
             return True
         if uri.startswith('xdg:'):
-            system("xdg-open %s" % uri[4:])
+            try:
+                system("xdg-open %s" % base64.b64decode(uri[4:]))
+            except:
+                pass
             return True
+        if uri.startswith('exec:'):
+            try:
+                system("%s" % base64.b64decode(uri[4:]))
+            except:
+                pass
+            return True
+ 
         self.l_uri=uri
         page=urllib.urlopen(uri)
         frame.load_string(page.read(),"text/html","iso-8859-15",page.geturl())
