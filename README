@@ -1,7 +1,9 @@
-Delusion - is the replacement for boring gnome-shell desktop with only wallpapers.
-It uses the WebKit for show widgets and other funny things. It uses dbus to be transparently integrated with gnome-desktop.
+Delusion - is the replacement for boring gnome-shell desktop currently contained only wallpapers.
+It uses the WebKit to show widgets and other funny things. It uses dbus to be transparently integrated with gnome-desktop.
 
 #TODO:
+1. Придумать как обеспечить JS взаимодействие с системными вызовами.
+
 1. Создать рабочий прототип
 2. Прибраться в коде с прицелом на систему плагинов.
 3. Сделать поддержку мультиязычности.

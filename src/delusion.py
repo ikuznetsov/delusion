@@ -14,6 +14,7 @@ class Main():
     def __init__(self):
         self.WALLPAPER_KEY = "org.gnome.desktop.background"
         self.IMAGE_PATH = Gio.Settings.new(self.WALLPAPER_KEY).get_string("picture-uri")
+        self.SERVER_PORT = 8112
 
         DBusGMainLoop(set_as_default=True)
         self.bus = dbus.SessionBus()
@@ -21,9 +22,12 @@ class Main():
 
         self.window = Gtk.Window()
         self.webview = Browser()
-
+        
+        #Allow to load local json files
+        settings = self.webview.get_settings()
+        settings.set_property('enable-file-access-from-file-uris', 1)
+        
         self.window.add(self.webview)
-
         self.refresh()
         self.webview.load_uri('file://%s/res/desktop.html' % os.getcwd())
 
@@ -37,6 +41,7 @@ class Main():
             self.refresh()
 
     def refresh(self):
+        import SocketServer
         self.IMAGE_PATH = Gio.Settings.new(self.WALLPAPER_KEY).get_string("picture-uri")
         stylesheet = open("%s/res/background.css" % os.getcwd() ,mode="w")
         stylesheet.write("body { background: url('%s') no-repeat; background-size: 100%%;}" % self.IMAGE_PATH);

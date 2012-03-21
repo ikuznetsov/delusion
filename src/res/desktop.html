@@ -9,7 +9,15 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
   <script type="text/javascript">
   $(document).ready(function() {
-    $('#fm').load('home_folder.json');
+
+$(document).ready(function() {
+    alert(1);
+  $.getJSON('file://./home_folder.json?callback=loadit', function(json) {
+    alert(2);   
+    alert(json);
+  });
+  alert(3);
+});
   // Create two variable with the names of the months and days in an array
    var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
    var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
