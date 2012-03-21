@@ -12,7 +12,7 @@
 
 $(document).ready(function() {
     alert(1);
-  $.getJSON('file://./home_folder.json?callback=loadit', function(json) {
+  $.getJSON('home_folder.json', function(json) {
     alert(2);   
     alert(json);
   });

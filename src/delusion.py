@@ -23,10 +23,6 @@ class Main():
         self.window = Gtk.Window()
         self.webview = Browser()
         
-        #Allow to load local json files
-        settings = self.webview.get_settings()
-        settings.set_property('enable-file-access-from-file-uris', 1)
-        
         self.window.add(self.webview)
         self.refresh()
         self.webview.load_uri('file://%s/res/desktop.html' % os.getcwd())
