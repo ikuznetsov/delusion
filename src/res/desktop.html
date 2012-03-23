@@ -4,65 +4,16 @@
     <meta charset=utf-8>
     <link rel='stylesheet' id='css' href='background.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='css' href='body.css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='css' href='filemanager.css' type='text/css' media='all'/>
     <title>Liquid Particles - spielzeugz.de canvas experiment </title>
   </head>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
 
-$(document).ready(function() {
-    alert(1);
-  $.getJSON('home_folder.json', function(json) {
-    alert(2);   
-    alert(json);
-  });
-  alert(3);
-});
-  // Create two variable with the names of the months and days in an array
-   var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
-   var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+  <script type="text/javascript" src="filemanager.js"></script>
 
-  // Create a newDate() object
-   var newDate = new Date();
-  // Extract the current date from Date object
-   newDate.setDate(newDate.getDate());
-  // Output the day, date, month and year    
-   $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
 
-  setInterval( function() {
-	// Create a newDate() object and extract the seconds of the current time on the visitor's
-	var seconds = new Date().getSeconds();
-	// Add a leading zero to seconds value
-	$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
-	},1000);
-	
-  setInterval( function() {
-	// Create a newDate() object and extract the minutes of the current time on the visitor's
-	var minutes = new Date().getMinutes();
-	// Add a leading zero to the minutes value
-	$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
-    },1000);
-	
-  setInterval( function() {
-	// Create a newDate() object and extract the hours of the current time on the visitor's
-	var hours = new Date().getHours();
-	// Add a leading zero to the hours value
-	$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
-    }, 1000);
-	
-  }); 
-</script>
+<body style='font-family: Helvetica; color: white'>
 
-  <body style='font-family: Helvetica; color: white'>
-<div id="fm" style="position: absolute; width: 100%%">
-<br/>
-<br/>
-<br/>
-<a class="fs" href='xdg:/home/bigbn/Music'>Music</a><br>
-<a class="fs" href='xdg:/home/bigbn/Desktop'>Desktop</a><br>
-<a class="fs" href='xdg:/home/bigbn/Repo'>Repo</a><br>
-<a class="fs" href='xdg:/home/bigbn/Dropbox'>Dropbox</a><br>
-</div>
 <div id="dash" style="position: absolute; margin-left: 302px; padding: 20px; margin-top:370px; background: rgba(255,255,255,0.4); color: black">
     <h3>Rhythmbox control</h3> 
    <a href="exec:ZGJ1cy1zZW5kIC0tdHlwZT1tZXRob2RfY2FsbCAgLS1wcmludC1yZXBseSAtLWRlc3Q9b3JnLm1wcmlzLk1lZGlhUGxheWVyMi5yaHl0aG1ib3ggIC9vcmcvbXByaXMvTWVkaWFQbGF5ZXIyIG9yZy5tcHJpcy5NZWRpYVBsYXllcjIuUGxheWVyLlByZXZpb3Vz"><img src="images/go-previous.png"/></a>
@@ -73,17 +24,6 @@ $(document).ready(function() {
     <a href="exec:ZGJ1cy1zZW5kIC0tdHlwZT1tZXRob2RfY2FsbCAgLS1wcmludC1yZXBseSAtLWRlc3Q9b3JnLm1wcmlzLk1lZGlhUGxheWVyMi5yaHl0aG1ib3ggIC9vcmcvbXByaXMvTWVkaWFQbGF5ZXIyIG9yZy5tcHJpcy5NZWRpYVBsYXllcjIuUGxheWVyLk5leHQ="><img src="images/go-next.png"/></a>
 
 </div>
-
-<div class="container">
-<div class="clock">
-
-<ul>
-	<li id="hours"> </li>
-    <li id="point">:</li>
-    <li id="min"> </li>
-    <li id="point">:</li>
-    <li id="sec"> </li>
-</ul>
 
 </div>
 </div>

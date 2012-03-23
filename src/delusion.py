@@ -4,11 +4,12 @@
 import os
 import gi
 gi.require_version('WebKit', '3.0')
-from gi.repository import Gtk,Gdk,Gio
+from gi.repository import Gtk,Gdk,Gio,GObject
 #from gi.repository import WebKit
 from browser import Browser
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
+import threading
 
 class Main():
     def __init__(self):
@@ -45,6 +46,11 @@ class Main():
         self.webview.reload()
 
     def load_plugins(self):
+        for filename in os.listdir("%s/plugins" % os.getcwd()):
+            if filename == "__init__.py":
+                break
+            plugin = __import__("plugins."+filename[:-3])
+      
         pass
 
     def show(self):
