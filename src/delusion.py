@@ -47,9 +47,12 @@ class Main():
 
     def load_plugins(self):
         for filename in os.listdir("%s/plugins" % os.getcwd()):
-            if filename == "__init__.py":
+            if filename == "__init__.py" or filename == "":
                 break
-            plugin = __import__("plugins."+filename[:-3])
+            try:
+                plugin = __import__("plugins."+filename[:-3])
+            except:
+                pass 
       
         pass
 
