@@ -22,7 +22,7 @@ class Browser(webkit.WebView):
             return True
         if uri.startswith('xdg:'):
             try:
-                system("xdg-open %s" % base64.b64decode(uri[4:]))
+                system("xdg-open \"%s\"" % base64.b64decode(uri[4:]))
             except:
                 pass
             return True
