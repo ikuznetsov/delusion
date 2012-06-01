@@ -14,6 +14,6 @@
   <!-- <script type="text/javascript" src="filemanager.js"></script>
   <script type="text/javascript" src="mediaplayer.js"></script>  -->
   <script type="text/javascript" src="todo.js"></script> 
- <body onload="start_watch()">
+ <body onload="start_watch()" style='font-family: Helvetica; color: white'>
  </body>
 </html>

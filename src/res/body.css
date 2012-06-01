@@ -1,0 +1,14 @@
+@font-face {
+  font-family: europe;
+  src: url(fonts/europe.ttf);
+}
+
+body{
+     font:13px/1.231 "europe",sans-serif;
+	 margin:0;
+	 padding:0;
+	 min-width:960px;
+	 color:#bbbbbb; 
+}
+
+textarea,input {font:13px/1.231 "europe",sans-serif;}
